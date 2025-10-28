@@ -41,8 +41,8 @@ export default function Header() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <div className="flex items-center justify-between h-16 md:h-20 gap-4">
+            <div className="flex items-center gap-3 cursor-pointer flex-shrink-0" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
               <img
                 src="/logo_bek.png"
                 alt="THISISBEKA"
@@ -51,7 +51,7 @@ export default function Header() {
                   filter: 'drop-shadow(0 0 15px rgba(192, 192, 192, 0.5)) drop-shadow(0 0 30px rgba(108, 99, 255, 0.3))',
                 }}
               />
-              <div className="hidden sm:block">
+              <div className="hidden sm:block whitespace-nowrap">
                 <div className="text-lg md:text-xl font-bold text-[#C0C0C0] tracking-[0.2em] font-['Orbitron']">
                   THISISBEKA
                 </div>
@@ -61,19 +61,19 @@ export default function Header() {
               </div>
             </div>
 
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-3 lg:gap-6 flex-wrap justify-end">
               {navItems.map((item) => (
                 <button
                   key={item.labelKey}
                   onClick={() => scrollToSection(item.href)}
-                  className="btn-retro group relative text-[#C0C0C0] hover:text-white transition-colors duration-300 font-['Rajdhani'] text-sm tracking-wider border border-white/20 px-4 py-2 uppercase"
+                  className="btn-retro group relative text-[#C0C0C0] hover:text-white transition-colors duration-300 font-['Rajdhani'] text-xs lg:text-sm tracking-wider border border-white/20 px-3 py-2 uppercase whitespace-nowrap"
                 >
                   <span className="relative z-10">{t(item.labelKey)}</span>
                 </button>
               ))}
             </nav>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-shrink-0">
               <button
                 onClick={toggleLanguage}
                 className="px-3 py-1 glass-morphism rounded-lg text-[#C0C0C0] hover:text-white transition-all duration-300 font-['Rajdhani'] text-sm font-bold tracking-wider hover:scale-105"
