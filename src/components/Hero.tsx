@@ -42,7 +42,7 @@ export default function Hero() {
 
         <AuroraText
           text={t('hero.title')}
-          className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-[0.15em] md:tracking-[0.2em]"
+          className="text-4xl sm:text-6xl md:text-6xl font-bold mb-6 md:mb-8 tracking-[0.15em] md:tracking-[0.2em]"
         />
 
         <div className="min-h-[80px] md:min-h-[100px] flex items-center justify-center mb-8 md:mb-12">
