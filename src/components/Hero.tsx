@@ -35,7 +35,7 @@ export default function Hero() {
           <img
             src="/logo_bek.png"
             alt="THISISBEKA Logo"
-            className="w-56 h-56 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto mb-6 md:mb-8 animate-breathe"
+            className="w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto mb-6 md:mb-8 animate-breathe"
             style={{ filter: 'brightness(1.2)' }}
           />
         </div>
