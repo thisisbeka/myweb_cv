@@ -107,13 +107,16 @@ export default function Header() {
                 <button
                   key={item.labelKey}
                   onClick={() => scrollToSection(item.href)}
-                  className="btn-retro-mobile group relative px-6 py-3 text-left text-[#C0C0C0] hover:text-white transition-all duration-300 font-['Rajdhani'] tracking-wider border border-white/20 uppercase text-sm"
+                  className="btn-retro-mobile group relative px-6 py-3 text-left hover:text-white transition-all duration-300 font-['Rajdhani'] tracking-wider border border-white/20 uppercase text-sm"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
-                  <span className="absolute inset-0 backdrop-blur-sm bg-black/30 rounded" />
-                  <span className="relative z-10">
-                    <span className="text-[#6C63FF] mr-2">&gt;_</span>
-                    {t(item.labelKey)}
+                  <span className="text-[#6C63FF] mr-2 relative">
+                    <span className="absolute inset-0 backdrop-blur-md bg-black/40 rounded-sm" style={{ padding: '2px 4px', margin: '-2px -4px' }} />
+                    <span className="relative z-10">&gt;_</span>
+                  </span>
+                  <span className="text-[#C0C0C0] relative inline-block">
+                    <span className="absolute inset-0 backdrop-blur-md bg-black/40 rounded-sm" style={{ padding: '2px 6px', margin: '-2px -6px' }} />
+                    <span className="relative z-10">{t(item.labelKey)}</span>
                   </span>
                 </button>
               ))}
