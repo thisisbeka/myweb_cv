@@ -66,10 +66,9 @@ export default function Header() {
                 <button
                   key={item.labelKey}
                   onClick={() => scrollToSection(item.href)}
-                  className="group relative text-[#C0C0C0] hover:text-white transition-colors duration-300 font-['Rajdhani'] text-sm tracking-wider"
+                  className="btn-retro group relative text-[#C0C0C0] hover:text-white transition-colors duration-300 font-['Rajdhani'] text-sm tracking-wider border border-white/20 px-4 py-2 uppercase"
                 >
                   <span className="relative z-10">{t(item.labelKey)}</span>
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-aluminum group-hover:w-full transition-all duration-300" />
                 </button>
               ))}
             </nav>
@@ -102,12 +101,12 @@ export default function Header() {
           }`}
         >
           <div className="mx-4 mb-4">
-            <nav className="flex flex-col">
+            <nav className="flex flex-col gap-2">
               {navItems.map((item, index) => (
                 <button
                   key={item.labelKey}
                   onClick={() => scrollToSection(item.href)}
-                  className="group relative px-6 py-4 text-left text-[#C0C0C0] hover:text-white transition-all duration-300 font-['Rajdhani'] tracking-wider"
+                  className="btn-retro-mobile group relative px-6 py-3 text-left text-[#C0C0C0] hover:text-white transition-all duration-300 font-['Rajdhani'] tracking-wider border border-white/20 uppercase text-sm"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <span className="text-[#6C63FF] mr-2">&gt;_</span>
@@ -131,6 +130,21 @@ export default function Header() {
             opacity: 1;
             transform: translateY(0);
           }
+        }
+
+        @keyframes retroHover {
+          0%, 100% { box-shadow: 0 0 0 1px #7B61FF; }
+          50% { box-shadow: 0 0 8px 2px #7B61FF; }
+        }
+
+        .btn-retro:hover {
+          animation: retroHover 0.8s infinite alternate;
+          border-color: #7B61FF;
+        }
+
+        .btn-retro-mobile:hover {
+          animation: retroHover 0.8s infinite alternate;
+          border-color: #7B61FF;
         }
       `}</style>
     </>
