@@ -110,8 +110,11 @@ export default function Header() {
                   className="btn-retro-mobile group relative px-6 py-3 text-left text-[#C0C0C0] hover:text-white transition-all duration-300 font-['Rajdhani'] tracking-wider border border-white/20 uppercase text-sm"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
-                  <span className="text-[#6C63FF] mr-2">&gt;_</span>
-                  {t(item.labelKey)}
+                  <span className="absolute inset-0 backdrop-blur-sm bg-black/30 rounded" />
+                  <span className="relative z-10">
+                    <span className="text-[#6C63FF] mr-2">&gt;_</span>
+                    {t(item.labelKey)}
+                  </span>
                 </button>
               ))}
             </nav>
