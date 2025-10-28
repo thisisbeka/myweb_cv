@@ -61,12 +61,12 @@ export default function Header() {
               </div>
             </div>
 
-            <nav className="hidden md:flex items-center gap-3 lg:gap-6 flex-wrap justify-end">
+            <nav className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-6">
               {navItems.map((item) => (
                 <button
                   key={item.labelKey}
                   onClick={() => scrollToSection(item.href)}
-                  className="btn-retro group relative text-[#C0C0C0] hover:text-white transition-colors duration-300 font-['Rajdhani'] text-xs lg:text-sm tracking-wider border border-white/20 px-3 py-2 uppercase whitespace-nowrap"
+                  className="btn-retro group relative text-[#C0C0C0] hover:text-white transition-colors duration-300 font-['Rajdhani'] text-[0.7rem] lg:text-xs xl:text-sm tracking-wide border border-white/20 px-2 lg:px-3 py-2 uppercase whitespace-nowrap"
                 >
                   <span className="relative z-10">{t(item.labelKey)}</span>
                 </button>
