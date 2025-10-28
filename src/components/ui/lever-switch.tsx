@@ -8,12 +8,6 @@ interface LeverSwitchProps {
 export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = "RU" }: LeverSwitchProps) => {
   return (
     <div className="relative inline-flex items-center gap-3">
-      <span className={`text-sm font-['Rajdhani'] font-bold tracking-wider transition-colors duration-300 ${
-        !checked ? "text-white" : "text-[#C0C0C0]/50"
-      }`}>
-        {leftLabel}
-      </span>
-
       <div className="toggle-container">
         <input
           className="toggle-input"
@@ -27,7 +21,11 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
         />
         <div className="toggle-handle-wrapper">
           <div className="toggle-handle">
-            <div className="toggle-handle-knob"></div>
+            <div className="toggle-handle-knob">
+              <span className="toggle-label">
+                {checked ? rightLabel : leftLabel}
+              </span>
+            </div>
             <div className="toggle-handle-bar-wrapper">
               <div className="toggle-handle-bar"></div>
             </div>
@@ -37,12 +35,6 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
           <div className="toggle-base-inside"></div>
         </div>
       </div>
-
-      <span className={`text-sm font-['Rajdhani'] font-bold tracking-wider transition-colors duration-300 ${
-        checked ? "text-white" : "text-[#C0C0C0]/50"
-      }`}>
-        {rightLabel}
-      </span>
 
       <style>{`
         .toggle-container {
@@ -122,6 +114,20 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
             inset 0 -2px 4px rgba(0, 0, 0, 0.2),
             inset 0 2px 4px rgba(255, 255, 255, 0.3);
           transition: all 0.3s ease;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .toggle-label {
+          font-family: 'Rajdhani', sans-serif;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 0.05em;
+          color: rgba(0, 0, 0, 0.7);
+          z-index: 1;
+          pointer-events: none;
+          text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
         }
 
         .toggle-input:checked ~ .toggle-handle-wrapper .toggle-handle-knob {
@@ -131,6 +137,11 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
             inset 0 -2px 4px rgba(0, 0, 0, 0.3),
             inset 0 2px 4px rgba(255, 255, 255, 0.2),
             0 0 12px rgba(108, 99, 255, 0.4);
+        }
+
+        .toggle-input:checked ~ .toggle-handle-wrapper .toggle-label {
+          color: rgba(255, 255, 255, 0.9);
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .toggle-handle-bar-wrapper {
