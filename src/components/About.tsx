@@ -83,7 +83,7 @@ export default function About() {
           />
           <StatCard
             icon={<Code className="w-8 h-8 md:w-10 md:h-10" />}
-            number={15}
+            number={100}
             label={t('about.stat3.label')}
             suffix="+"
             color="#EDEDED"
