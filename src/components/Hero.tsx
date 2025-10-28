@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { AuroraText } from './ui/aurora-text';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   const [text, setText] = useState('');
@@ -32,12 +33,33 @@ export default function Hero() {
 
       <div className="relative z-10 text-center px-6 max-w-5xl -mt-20 md:-mt-32">
         <div className="mb-8 md:mb-6 animate-fade-in">
-          <img
-            src="/logo_bek.png"
-            alt="THISISBEKA Logo"
-            className="w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto mb-6 md:mb-4 animate-breathe"
-            style={{ filter: 'brightness(1.2)' }}
-          />
+          <div className="relative inline-block group">
+            <motion.img
+              src="/logo_bek.png"
+              alt="THISISBEKA Logo"
+              className="w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto mb-6 md:mb-4 relative z-10 transition-transform duration-300"
+              style={{ filter: 'brightness(1.2)' }}
+              whileHover={{
+                rotateY: 15,
+                rotateX: -10,
+                scale: 1.1
+              }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 10
+              }}
+            />
+            <img
+              src="/logo_bek.png"
+              alt="THISISBEKA Logo RGB"
+              className="absolute top-0 left-0 w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 opacity-0 group-hover:opacity-50 blur-sm transition-all duration-300 group-hover:translate-x-[-2px] mb-6 md:mb-4"
+              style={{
+                filter: 'brightness(1.2) hue-rotate(180deg)',
+                mixBlendMode: 'screen'
+              }}
+            />
+          </div>
         </div>
 
         <AuroraText
