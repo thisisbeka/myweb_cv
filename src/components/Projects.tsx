@@ -259,9 +259,9 @@ function ProjectCard({ project, index, language }: ProjectCardProps) {
           </div>
         </div>
 
-        <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6">
-          {typeof project.description === 'string' ? project.description : project.description[language]}
-        </p>
+        <p className="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6" dangerouslySetInnerHTML={{
+          __html: (typeof project.description === 'string' ? project.description : project.description[language]).replace(/(\d+[,\d]*\+?)/g, '<span class="retro-number">$1</span>')
+        }} />
 
         <div className="flex flex-wrap gap-2">
           {project.tags.map((tag, i) => (

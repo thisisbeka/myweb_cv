@@ -49,7 +49,7 @@ export default function Education() {
                 <h3 className="text-xl md:text-3xl font-bold text-[#C0C0C0] uppercase tracking-wider">
                   {t('education.degree.title')}
                 </h3>
-                <p className="text-gray-400 text-base md:text-lg mt-1">{t('education.degree.period')}</p>
+                <p className="text-gray-400 text-base md:text-lg mt-1" dangerouslySetInnerHTML={{ __html: t('education.degree.period').replace(/(\d+)/g, '<span class="retro-number">$1</span>') }} />
               </div>
             </div>
 

@@ -150,16 +150,8 @@ function StatCard({ icon, number, label, suffix = '', color }: StatCardProps) {
       <div className="flex justify-center mb-3 md:mb-4" style={{ color }}>
         <div className="w-8 h-8 md:w-10 md:h-10">{icon}</div>
       </div>
-      <div
-        className="text-2xl md:text-3xl font-bold font-mono mb-2 md:mb-3"
-        style={{
-          color,
-          textShadow: `0 0 10px ${color}, 0 0 20px ${color}80`,
-          fontFamily: "'Courier New', 'Consolas', monospace",
-          letterSpacing: '0.15em'
-        }}
-      >
-        [{count}{suffix}]
+      <div className="text-2xl md:text-3xl font-bold mb-2 md:mb-3">
+        <span className="retro-number">[{count}{suffix}]</span>
       </div>
       <div className="text-gray-400 uppercase text-xs md:text-sm tracking-wider">{label}</div>
     </div>

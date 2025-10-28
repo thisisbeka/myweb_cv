@@ -65,7 +65,7 @@ export default function Experience() {
 function JavaCodeBackground() {
   const javaSnippets = [
     'public class Experience {',
-    '  private int years = 4;',
+    '  private int years = <span class="retro-number">4</span>;',
     '  @Override',
     '  public void develop() {',
     '    System.out.println("AI");',
@@ -95,9 +95,8 @@ function JavaCodeBackground() {
               animation: `java-fade ${3 + i * 0.5}s ease-in-out ${i * 0.2}s infinite`,
               textShadow: '0 0 5px rgba(212, 212, 212, 0.3)',
             }}
-          >
-            {line}
-          </div>
+            dangerouslySetInnerHTML={{ __html: line }}
+          />
         ))}
       </div>
 
@@ -224,7 +223,7 @@ function ExperienceContent({ experience }: { experience: typeof experiences[0] }
 
       <div className="flex items-center gap-2 mb-4 text-gray-400">
         <Calendar className="w-4 h-4" />
-        <span className="text-xs md:text-sm">{experience.period}</span>
+        <span className="text-xs md:text-sm" dangerouslySetInnerHTML={{ __html: experience.period.replace(/(\d+)/g, '<span class="retro-number">$1</span>') }} />
       </div>
 
       <p className="text-sm md:text-base text-gray-400 leading-relaxed">{experience.description}</p>
