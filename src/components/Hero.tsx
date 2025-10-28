@@ -35,10 +35,7 @@ export default function Hero() {
           <img
             src="/logo_bek.png"
             alt="THISISBEKA Logo"
-            className="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto mb-6 md:mb-8 animate-pulse-glow-retro"
-            style={{
-              filter: 'drop-shadow(0 0 30px rgba(192, 192, 192, 0.6)) drop-shadow(0 0 60px rgba(108, 99, 255, 0.4))',
-            }}
+            className="w-52 h-52 md:w-72 md:h-72 lg:w-80 lg:h-80 mx-auto mb-6 md:mb-8 animate-breathe"
           />
         </div>
 
@@ -92,12 +89,12 @@ export default function Hero() {
           to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes pulse-glow-retro {
+        @keyframes breathe {
           0%, 100% {
-            filter: drop-shadow(0 0 30px rgba(192, 192, 192, 0.6)) drop-shadow(0 0 60px rgba(108, 99, 255, 0.4));
+            transform: scale(1);
           }
           50% {
-            filter: drop-shadow(0 0 50px rgba(192, 192, 192, 0.8)) drop-shadow(0 0 80px rgba(108, 99, 255, 0.6));
+            transform: scale(1.05);
           }
         }
 
@@ -109,8 +106,8 @@ export default function Hero() {
           animation: fade-in 1.5s ease-out;
         }
 
-        .animate-pulse-glow-retro {
-          animation: pulse-glow-retro 3s ease-in-out infinite;
+        .animate-breathe {
+          animation: breathe 3s ease-in-out infinite;
         }
       `}</style>
     </section>

@@ -93,7 +93,7 @@ export default function Contact() {
 
         <footer className="mt-12 md:mt-20 text-center">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <img src="/logo_bek.png" alt="Logo" className="w-10 h-10 md:w-12 md:h-12 animate-pulse-slow" style={{ filter: 'drop-shadow(0 0 20px rgba(192, 192, 192, 0.5))' }} />
+            <img src="/logo_bek.png" alt="Logo" className="w-12 h-12 md:w-14 md:h-14 animate-breathe-slow" />
           </div>
           <p className="text-gray-500 text-xs md:text-sm tracking-[0.15em] md:tracking-[0.2em] font-['Rajdhani']">
             <span className="text-[#6C63FF]">&gt;_</span> THISISBEKA 2025<span className="animate-terminal-cursor">█</span>
@@ -103,37 +103,21 @@ export default function Contact() {
               0%, 50% { opacity: 1; }
               51%, 100% { opacity: 0; }
             }
+            @keyframes breathe-slow {
+              0%, 100% { transform: scale(1); }
+              50% { transform: scale(1.05); }
+            }
             .animate-terminal-cursor {
               animation: terminal-cursor 1s infinite;
+            }
+            .animate-breathe-slow {
+              animation: breathe-slow 4s ease-in-out infinite;
             }
           `}</style>
         </footer>
       </div>
 
 
-      <style>{`
-        @keyframes pulse-slow {
-          0%, 100% { transform: scale(1); opacity: 0.9; }
-          50% { transform: scale(1.05); opacity: 1; }
-        }
-
-        @keyframes pulse-glow-slow {
-          0%, 100% {
-            filter: drop-shadow(0 0 30px rgba(192, 192, 192, 0.6)) drop-shadow(0 0 60px rgba(108, 99, 255, 0.4));
-          }
-          50% {
-            filter: drop-shadow(0 0 50px rgba(192, 192, 192, 0.8)) drop-shadow(0 0 80px rgba(108, 99, 255, 0.6));
-          }
-        }
-
-        .animate-pulse-slow {
-          animation: pulse-slow 4s ease-in-out infinite;
-        }
-
-        .animate-pulse-glow-slow {
-          animation: pulse-glow-slow 3s ease-in-out infinite;
-        }
-      `}</style>
     </section>
   );
 }
