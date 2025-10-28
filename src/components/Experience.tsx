@@ -1,5 +1,6 @@
 import { Briefcase, Calendar } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const experiences = [
   {
@@ -33,12 +34,14 @@ const experiences = [
 ];
 
 export default function Experience() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative py-16 md:py-20 px-6 overflow-hidden">
       <JavaCodeBackground />
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6 glow-violet">
-          EXPERIENCE
+          {t('nav.experience')}
         </h2>
         <div className="h-1 w-24 md:w-32 bg-gradient-violet mx-auto mb-8 md:mb-12 rounded-full" />
 

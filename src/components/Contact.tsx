@@ -1,4 +1,5 @@
 import { Mail, Phone, Linkedin, Instagram, Github } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -21,40 +22,42 @@ const floatingBubbles = Array.from({ length: 20 }, (_, i) => ({
 }));
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative py-16 md:py-20 px-6 overflow-hidden">
       <LiquidGlassBackground />
 
       <div className="max-w-5xl mx-auto relative z-10">
         <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6 glow-violet">
-          LET'S CONNECT
+          {t('contact.title')}
         </h2>
         <div className="h-1 w-24 md:w-32 bg-gradient-violet mx-auto mb-8 md:mb-12 rounded-full" />
 
         <div className="text-center">
           <p className="text-lg md:text-2xl text-gray-300 mb-8 md:mb-12 leading-relaxed font-['IBM_Plex_Sans']">
-            <span className="text-[#6C63FF]">&gt;_</span> Ready to build something extraordinary?{' '}
-            <span className="text-[#C0C0C0] font-semibold">Let's talk.</span>
+            <span className="text-[#6C63FF]">&gt;_</span> {t('contact.subtitle')}{' '}
+            <span className="text-[#C0C0C0] font-semibold">{t('contact.cta')}</span>
           </p>
 
           <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto mb-6 md:mb-8">
             <ContactCard
               icon={<Mail className="w-6 h-6 md:w-8 md:h-8" />}
-              label="Email"
+              label={t('contact.email.label')}
               value="bekpasha.dursunov@gmail.com"
               href="mailto:bekpasha.dursunov@gmail.com"
               color="#C0C0C0"
             />
             <ContactCard
               icon={<Phone className="w-6 h-6 md:w-8 md:h-8" />}
-              label="Phone"
+              label={t('contact.phone.label')}
               value="+7 702 399 7525"
               href="tel:+77023997525"
               color="#6C63FF"
             />
             <ContactCard
               icon={<Linkedin className="w-6 h-6 md:w-8 md:h-8" />}
-              label="LinkedIn"
+              label={t('contact.linkedin.label')}
               value="thisisbeka"
               href="https://www.linkedin.com/in/thisisbeka"
               color="#C0C0C0"
@@ -64,21 +67,21 @@ export default function Contact() {
           <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto">
             <ContactCard
               icon={<Instagram className="w-6 h-6 md:w-8 md:h-8" />}
-              label="Instagram"
+              label={t('contact.instagram.label')}
               value="@thisisbeka"
               href="https://instagram.com/thisisbeka"
               color="#C0C0C0"
             />
             <ContactCard
               icon={<WhatsAppIcon className="w-6 h-6 md:w-8 md:h-8" />}
-              label="WhatsApp"
+              label={t('contact.whatsapp.label')}
               value="+7 702 399 7525"
               href="https://wa.me/77023997525"
               color="#C0C0C0"
             />
             <ContactCard
               icon={<Github className="w-6 h-6 md:w-8 md:h-8" />}
-              label="GitHub"
+              label={t('contact.github.label')}
               value="thisisbeka"
               href="https://github.com/thisisbeka"
               color="#C0C0C0"

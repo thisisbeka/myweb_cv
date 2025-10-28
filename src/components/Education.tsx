@@ -1,7 +1,9 @@
 import { GraduationCap, MapPin } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Education() {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -27,7 +29,7 @@ export default function Education() {
       <ASCIIArtBackground />
       <div className="max-w-5xl mx-auto relative z-10">
         <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6 glow-aluminum">
-          EDUCATION
+          {t('nav.education')}
         </h2>
         <div className="h-1 w-24 md:w-32 bg-gradient-aluminum mx-auto mb-8 md:mb-12 rounded-full" />
 
