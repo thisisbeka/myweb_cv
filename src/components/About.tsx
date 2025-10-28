@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { AuroraText } from './ui/aurora-text';
-import { RetroArrowUp, RetroMedal, RetroCode } from './ui/retro-icons';
+import { TrendingUp, Award, Code } from 'lucide-react';
 
 export default function About() {
   const { t } = useLanguage();
@@ -68,21 +68,21 @@ export default function About() {
 
         <div className="grid grid-cols-3 gap-4 md:gap-8">
           <StatCard
-            icon={<RetroArrowUp className="w-8 h-8 md:w-10 md:h-10" color="#EDEDED" />}
+            icon={<TrendingUp className="w-8 h-8 md:w-10 md:h-10" />}
             number={4}
             label={t('about.stat1.label')}
             suffix="+"
             color="#EDEDED"
           />
           <StatCard
-            icon={<RetroMedal className="w-8 h-8 md:w-10 md:h-10" color="#7B61FF" />}
+            icon={<Award className="w-8 h-8 md:w-10 md:h-10" />}
             number={50}
             label={t('about.stat2.label')}
             suffix="+"
             color="#7B61FF"
           />
           <StatCard
-            icon={<RetroCode className="w-8 h-8 md:w-10 md:h-10" color="#EDEDED" />}
+            icon={<Code className="w-8 h-8 md:w-10 md:h-10" />}
             number={15}
             label={t('about.stat3.label')}
             suffix="+"
@@ -150,26 +150,16 @@ function StatCard({ icon, number, label, suffix = '', color }: StatCardProps) {
       <div className="flex justify-center mb-3 md:mb-4" style={{ color }}>
         <div className="w-8 h-8 md:w-10 md:h-10">{icon}</div>
       </div>
-      <div className="flex justify-center mb-2 md:mb-3">
-        <div
-          className="px-3 py-2 md:px-4 md:py-2 bg-black/60 border-2 rounded"
-          style={{
-            borderColor: color,
-            boxShadow: `0 0 15px ${color}60, inset 0 0 10px ${color}20`
-          }}
-        >
-          <div
-            className="text-2xl md:text-3xl font-bold font-mono"
-            style={{
-              color,
-              textShadow: `0 0 10px ${color}, 0 0 20px ${color}80`,
-              fontFamily: "'Courier New', 'Consolas', monospace",
-              letterSpacing: '0.15em'
-            }}
-          >
-            [{count}{suffix}]
-          </div>
-        </div>
+      <div
+        className="text-2xl md:text-3xl font-bold font-mono mb-2 md:mb-3"
+        style={{
+          color,
+          textShadow: `0 0 10px ${color}, 0 0 20px ${color}80`,
+          fontFamily: "'Courier New', 'Consolas', monospace",
+          letterSpacing: '0.15em'
+        }}
+      >
+        [{count}{suffix}]
       </div>
       <div className="text-gray-400 uppercase text-xs md:text-sm tracking-wider">{label}</div>
     </div>
