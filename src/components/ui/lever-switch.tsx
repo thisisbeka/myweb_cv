@@ -14,12 +14,15 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
         {leftLabel}
       </span>
 
-      <div className="toggle-container" onClick={onToggle}>
+      <div className="toggle-container">
         <input
           className="toggle-input"
           type="checkbox"
           checked={checked}
-          onChange={onToggle}
+          onChange={(e) => {
+            e.stopPropagation();
+            onToggle();
+          }}
           aria-label="Toggle language"
         />
         <div className="toggle-handle-wrapper">
