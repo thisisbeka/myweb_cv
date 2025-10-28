@@ -212,17 +212,17 @@ function ExperienceCard({ experience, index }: ExperienceCardProps) {
 function ExperienceContent({ experience }: { experience: typeof experiences[0] }) {
   return (
     <div className="group transition-all duration-300">
-      <div className="flex items-center gap-2 md:gap-3 mb-3 flex-wrap">
-        <RetroBriefcase className="w-5 h-5 md:w-6 md:h-6" color={experience.color} />
-        <h3 className="text-xl md:text-2xl font-bold" style={{ color: experience.color }}>
+      <div className="flex items-center gap-2 md:gap-3 mb-3">
+        <RetroBriefcase className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" color={experience.color} />
+        <h3 className="text-lg md:text-2xl font-bold break-words" style={{ color: experience.color }}>
           {experience.company}
         </h3>
       </div>
 
-      <h4 className="text-lg md:text-xl text-gray-300 mb-3 font-semibold">{experience.role}</h4>
+      <h4 className="text-base md:text-xl text-gray-300 mb-3 font-semibold">{experience.role}</h4>
 
       <div className="flex items-center gap-2 mb-4 text-gray-400">
-        <Calendar className="w-4 h-4" />
+        <Calendar className="w-4 h-4 flex-shrink-0" />
         <span className="text-xs md:text-sm" dangerouslySetInnerHTML={{ __html: experience.period.replace(/(\d+)/g, '<span class="retro-number">$1</span>') }} />
       </div>
 
