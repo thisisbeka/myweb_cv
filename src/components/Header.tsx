@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { LeverSwitch } from './ui/lever-switch';
 
 const navItems = [
   { labelKey: 'nav.about', href: '#about' },
@@ -74,12 +75,12 @@ export default function Header() {
             </nav>
 
             <div className="flex items-center gap-3 flex-shrink-0">
-              <button
-                onClick={toggleLanguage}
-                className="px-3 py-1 glass-morphism rounded-lg text-[#C0C0C0] hover:text-white transition-all duration-300 font-['Rajdhani'] text-sm font-bold tracking-wider hover:scale-105"
-              >
-                {language === 'en' ? 'EN' : 'RU'}
-              </button>
+              <LeverSwitch
+                checked={language === 'ru'}
+                onToggle={toggleLanguage}
+                leftLabel="EN"
+                rightLabel="RU"
+              />
 
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
