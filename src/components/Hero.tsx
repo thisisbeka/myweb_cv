@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { AuroraText } from './ui/aurora-text';
 
 export default function Hero() {
   const [text, setText] = useState('');
@@ -41,9 +42,10 @@ export default function Hero() {
           />
         </div>
 
-        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 glow-aluminum tracking-[0.15em] md:tracking-[0.2em]">
-          {t('hero.title')}
-        </h1>
+        <AuroraText
+          text={t('hero.title')}
+          className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-[0.15em] md:tracking-[0.2em]"
+        />
 
         <div className="min-h-[80px] md:min-h-[100px] flex items-center justify-center mb-8 md:mb-12">
           <div className="glass-morphism px-4 sm:px-6 md:px-8 py-4 md:py-6 rounded-lg crt-effect">

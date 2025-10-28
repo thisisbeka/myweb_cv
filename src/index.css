@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes aurora-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
 @layer base {
   body {
     @apply text-gray-100;
@@ -78,6 +101,32 @@
   html[lang="ru"] h5,
   html[lang="ru"] h6 {
     letter-spacing: 0.12em;
+  }
+
+  .aurora-text {
+    background: linear-gradient(
+      135deg,
+      #C0C0C0 0%,
+      #6C63FF 15%,
+      #8B82FF 30%,
+      #C0C0C0 45%,
+      #E8E8E8 60%,
+      #6C63FF 75%,
+      #C0C0C0 90%,
+      #A8A8A8 100%
+    );
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: aurora-flow 8s ease infinite;
+    text-shadow:
+      0 0 20px rgba(192, 192, 192, 0.3),
+      0 0 40px rgba(108, 99, 255, 0.2);
+  }
+
+  .animate-twinkle {
+    animation: twinkle 3s ease-in-out infinite;
   }
 }
 
