@@ -128,7 +128,7 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
           font-size: 9px;
           font-weight: 700;
           letter-spacing: 0.05em;
-          color: rgba(192, 192, 192, 0.4);
+          color: rgba(255, 255, 255, 0.9);
           z-index: 1;
           pointer-events: none;
           transition: all 0.3s ease;
@@ -139,7 +139,7 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
         }
 
         .toggle-label-right {
-          opacity: 0.3;
+          opacity: 0.4;
         }
 
         .toggle-input:checked ~ .toggle-handle-wrapper .toggle-handle-knob {
@@ -152,12 +152,11 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
         }
 
         .toggle-input:checked ~ .toggle-base .toggle-label-left {
-          opacity: 0.3;
+          opacity: 0.4;
         }
 
         .toggle-input:checked ~ .toggle-base .toggle-label-right {
           opacity: 1;
-          color: rgba(192, 192, 192, 0.9);
         }
 
         .toggle-handle-bar-wrapper {
