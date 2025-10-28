@@ -19,20 +19,23 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
           }}
           aria-label="Toggle language"
         />
+        <div className="toggle-base">
+          <div className="toggle-base-inside">
+            <span className="toggle-label toggle-label-left">
+              {leftLabel}
+            </span>
+            <span className="toggle-label toggle-label-right">
+              {rightLabel}
+            </span>
+          </div>
+        </div>
         <div className="toggle-handle-wrapper">
           <div className="toggle-handle">
-            <div className="toggle-handle-knob">
-              <span className="toggle-label">
-                {checked ? rightLabel : leftLabel}
-              </span>
-            </div>
+            <div className="toggle-handle-knob"></div>
             <div className="toggle-handle-bar-wrapper">
               <div className="toggle-handle-bar"></div>
             </div>
           </div>
-        </div>
-        <div className="toggle-base">
-          <div className="toggle-base-inside"></div>
         </div>
       </div>
 
@@ -82,6 +85,10 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
           bottom: 4px;
           background: rgba(0, 0, 0, 0.3);
           border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 8px;
         }
 
         .toggle-handle-wrapper {
@@ -114,20 +121,25 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
             inset 0 -2px 4px rgba(0, 0, 0, 0.2),
             inset 0 2px 4px rgba(255, 255, 255, 0.3);
           transition: all 0.3s ease;
-          display: flex;
-          align-items: center;
-          justify-content: center;
         }
 
         .toggle-label {
           font-family: 'Rajdhani', sans-serif;
-          font-size: 10px;
+          font-size: 9px;
           font-weight: 700;
           letter-spacing: 0.05em;
-          color: rgba(0, 0, 0, 0.7);
+          color: rgba(192, 192, 192, 0.4);
           z-index: 1;
           pointer-events: none;
-          text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .toggle-label-left {
+          opacity: 1;
+        }
+
+        .toggle-label-right {
+          opacity: 0.3;
         }
 
         .toggle-input:checked ~ .toggle-handle-wrapper .toggle-handle-knob {
@@ -139,9 +151,13 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
             0 0 12px rgba(108, 99, 255, 0.4);
         }
 
-        .toggle-input:checked ~ .toggle-handle-wrapper .toggle-label {
-          color: rgba(255, 255, 255, 0.9);
-          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        .toggle-input:checked ~ .toggle-base .toggle-label-left {
+          opacity: 0.3;
+        }
+
+        .toggle-input:checked ~ .toggle-base .toggle-label-right {
+          opacity: 1;
+          color: rgba(192, 192, 192, 0.9);
         }
 
         .toggle-handle-bar-wrapper {
