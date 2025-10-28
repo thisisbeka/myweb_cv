@@ -107,13 +107,16 @@
     background: linear-gradient(
       135deg,
       #C0C0C0 0%,
-      #6C63FF 15%,
+      #E8E8E8 10%,
+      #6C63FF 20%,
       #8B82FF 30%,
-      #C0C0C0 45%,
+      #C0C0C0 40%,
+      #A8A8A8 50%,
       #E8E8E8 60%,
-      #6C63FF 75%,
+      #6C63FF 70%,
+      #8B82FF 80%,
       #C0C0C0 90%,
-      #A8A8A8 100%
+      #E8E8E8 100%
     );
     background-size: 400% 400%;
     background-clip: text;
