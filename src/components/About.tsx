@@ -7,7 +7,7 @@ export default function About() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-16 md:py-20 px-6 overflow-hidden">
+    <section className="relative pb-16 md:pb-20 px-6 overflow-hidden">
       <CRTTerminalBackground />
       <div className="max-w-6xl mx-auto relative z-10">
         <AuroraText
