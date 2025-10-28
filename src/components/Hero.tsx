@@ -30,7 +30,7 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <RetroGrid />
 
-      <div className="relative z-10 text-center px-6 max-w-5xl -mt-20 md:-mt-12">
+      <div className="relative z-10 text-center px-6 max-w-5xl -mt-20 md:-mt-32">
         <div className="mb-8 md:mb-6 animate-fade-in">
           <img
             src="/logo_bek.png"
