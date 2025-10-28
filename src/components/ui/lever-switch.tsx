@@ -1,5 +1,3 @@
-import { cn } from "@/lib/utils";
-
 interface LeverSwitchProps {
   checked: boolean;
   onToggle: () => void;
@@ -10,10 +8,9 @@ interface LeverSwitchProps {
 export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = "RU" }: LeverSwitchProps) => {
   return (
     <div className="relative inline-flex items-center gap-3">
-      <span className={cn(
-        "text-sm font-['Rajdhani'] font-bold tracking-wider transition-colors duration-300",
+      <span className={`text-sm font-['Rajdhani'] font-bold tracking-wider transition-colors duration-300 ${
         !checked ? "text-white" : "text-[#C0C0C0]/50"
-      )}>
+      }`}>
         {leftLabel}
       </span>
 
@@ -38,10 +35,9 @@ export const LeverSwitch = ({ checked, onToggle, leftLabel = "EN", rightLabel = 
         </div>
       </div>
 
-      <span className={cn(
-        "text-sm font-['Rajdhani'] font-bold tracking-wider transition-colors duration-300",
+      <span className={`text-sm font-['Rajdhani'] font-bold tracking-wider transition-colors duration-300 ${
         checked ? "text-white" : "text-[#C0C0C0]/50"
-      )}>
+      }`}>
         {rightLabel}
       </span>
 
