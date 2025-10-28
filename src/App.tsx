@@ -8,8 +8,16 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import CursorTrail from './components/CursorTrail';
 import SmoothScroll from './components/SmoothScroll';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { useEffect } from 'react';
 
-function App() {
+function AppContent() {
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
+
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
       <CursorTrail />
@@ -24,6 +32,14 @@ function App() {
       <div id="education"><Education /></div>
       <div id="contact"><Contact /></div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 
