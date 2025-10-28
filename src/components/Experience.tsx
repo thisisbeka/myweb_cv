@@ -148,28 +148,28 @@ function ExperienceCard({ experience, index }: ExperienceCardProps) {
   return (
     <div
       ref={ref}
-      className={`relative grid md:grid-cols-2 gap-8 items-center ${
+      className={`relative grid md:grid-cols-2 gap-8 items-start ${
         isVisible ? 'animate-slide-in' : 'opacity-0'
       }`}
       style={{ animationDelay: `${index * 0.2}s` }}
     >
       {isEven ? (
         <>
-          <div className="md:text-right">
-            <ExperienceContent experience={experience} />
+          <div className="md:text-right md:pr-8">
+            <ExperienceContent experience={experience} isLeft={true} />
           </div>
           <div className="hidden md:block" />
         </>
       ) : (
         <>
           <div className="hidden md:block" />
-          <div>
-            <ExperienceContent experience={experience} />
+          <div className="md:pl-8">
+            <ExperienceContent experience={experience} isLeft={false} />
           </div>
         </>
       )}
 
-      <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:block">
+      <div className="absolute left-1/2 top-4 transform -translate-x-1/2 hidden md:block">
         <div
           className="w-6 h-6 rounded-full animate-pulse-ring"
           style={{ backgroundColor: experience.color }}
@@ -209,24 +209,25 @@ function ExperienceCard({ experience, index }: ExperienceCardProps) {
   );
 }
 
-function ExperienceContent({ experience }: { experience: typeof experiences[0] }) {
+function ExperienceContent({ experience, isLeft }: { experience: typeof experiences[0], isLeft: boolean }) {
   return (
     <div className="group transition-all duration-300">
-      <div className="flex items-center gap-2 md:gap-3 mb-3">
-        <RetroBriefcase className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0" color={experience.color} />
-        <h3 className="text-lg md:text-2xl font-bold break-words" style={{ color: experience.color }}>
-          {experience.company}
-        </h3>
+      <div className={`flex items-start gap-3 md:gap-4 mb-4 ${isLeft ? 'md:flex-row-reverse md:justify-end' : ''}`}>
+        <RetroBriefcase className="w-8 h-8 md:w-10 md:h-10 flex-shrink-0 mt-1" color={experience.color} />
+        <div className="flex-1">
+          <h3 className="text-xl md:text-3xl font-bold mb-2 leading-tight" style={{ color: experience.color }}>
+            {experience.company}
+          </h3>
+          <h4 className="text-base md:text-xl text-gray-300 mb-3 font-semibold">{experience.role}</h4>
+        </div>
       </div>
 
-      <h4 className="text-base md:text-xl text-gray-300 mb-3 font-semibold">{experience.role}</h4>
-
-      <div className="flex items-center gap-2 mb-4 text-gray-400">
+      <div className={`flex items-center gap-2 mb-4 text-gray-400 ${isLeft ? 'md:justify-end' : ''}`}>
         <Calendar className="w-4 h-4 flex-shrink-0" />
         <span className="text-xs md:text-sm" dangerouslySetInnerHTML={{ __html: experience.period.replace(/(\d+)/g, '<span class="retro-number">$1</span>') }} />
       </div>
 
-      <p className="text-sm md:text-base text-gray-400 leading-relaxed">{experience.description}</p>
+      <p className={`text-sm md:text-base text-gray-400 leading-relaxed ${isLeft ? 'md:text-right' : ''}`}>{experience.description}</p>
     </div>
   );
 }
