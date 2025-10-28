@@ -118,29 +118,6 @@ export default function Hero() {
 }
 
 function RetroGrid() {
-  const codeSnippets = [
-    'const AI = () => {}',
-    'function analyze(data)',
-    'import { ML }',
-    'neural.network()',
-    'async predict()',
-    'class DataModel',
-    'export default',
-    'return result',
-    'if (condition)',
-    'for (let i = 0)',
-    'map(item => {})',
-    'filter(data)',
-    'reduce(acc)',
-    'await fetch()',
-    'try { catch }',
-    'switch (case)',
-    'console.log()',
-    'useState()',
-    'useEffect()',
-    '=> { return }',
-  ];
-
   return (
     <div className="absolute inset-0">
       <div className="absolute inset-0 retro-grid opacity-30" style={{
@@ -157,25 +134,6 @@ function RetroGrid() {
         />
       </div>
 
-      <div className="absolute inset-0 overflow-hidden">
-        {codeSnippets.map((code, i) => (
-          <div
-            key={i}
-            className="absolute font-mono text-xs md:text-sm whitespace-nowrap"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              color: i % 3 === 0 ? '#C0C0C0' : i % 3 === 1 ? '#6C63FF' : '#8B82FF',
-              opacity: Math.random() * 0.3 + 0.1,
-              animation: `float-code ${Math.random() * 20 + 15}s linear ${Math.random() * 5}s infinite`,
-              textShadow: '0 0 10px rgba(192, 192, 192, 0.3)',
-            }}
-          >
-            {code}
-          </div>
-        ))}
-      </div>
-
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C0C0C0]/30 to-transparent animate-scan-line" />
         <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#6C63FF]/30 to-transparent animate-scan-line-delayed" />
@@ -183,23 +141,6 @@ function RetroGrid() {
       </div>
 
       <style>{`
-        @keyframes float-code {
-          0% {
-            transform: translateY(0) translateX(0) rotate(0deg);
-            opacity: 0;
-          }
-          10% {
-            opacity: 0.3;
-          }
-          90% {
-            opacity: 0.3;
-          }
-          100% {
-            transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg);
-            opacity: 0;
-          }
-        }
-
         @keyframes scan-line {
           0%, 100% {
             transform: translateY(0);
