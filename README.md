@@ -183,7 +183,7 @@ This is a personal portfolio project. Feel free to use it as inspiration for you
 **THISISBEKA**
 
 - GitHub: [@thisisbeka](https://github.com/thisisbeka)
-- LinkedIn: [Bekzhan Kydyrmyshev](https://linkedin.com/in/bekzhan-kydyrmyshev-a24924241)
+- LinkedIn: [Bekpasha Dursunov](https://www.linkedin.com/in/thisisbeka/)
 - Telegram: [@thisisbeka](https://t.me/thisisbeka)
 
 ---
