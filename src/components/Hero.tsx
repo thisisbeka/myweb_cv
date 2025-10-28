@@ -331,9 +331,17 @@ function ContactModal({ onClose }: ContactModalProps) {
 
           <button
             type="submit"
-            className="w-full px-6 py-3 bg-gradient-to-r from-[#6C63FF] to-[#C0C0C0] text-white font-bold rounded-lg hover:scale-105 transition-transform duration-300 font-['Rajdhani'] tracking-wider"
+            className="group relative w-full px-4 py-2.5 bg-black border-2 border-[#6C63FF] text-[#6C63FF] font-bold hover:bg-[#6C63FF] hover:text-black transition-all duration-300 font-mono tracking-wider text-sm uppercase overflow-hidden retro-button"
           >
-            {t('modal.submit')}
+            <span className="relative z-10 flex items-center justify-center gap-2">
+              <span className="text-xs">[</span>
+              {t('modal.submit')}
+              <span className="text-xs">]</span>
+              <span className="inline-block group-hover:translate-x-1 transition-transform duration-300">&gt;</span>
+            </span>
+            <div className="absolute inset-0 bg-[#6C63FF] opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C0C0C0]/50 to-transparent animate-scan-horizontal" />
+            <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C0C0C0]/50 to-transparent animate-scan-horizontal-delayed" />
           </button>
         </form>
 
@@ -349,8 +357,57 @@ function ContactModal({ onClose }: ContactModalProps) {
             }
           }
 
+          @keyframes scan-horizontal {
+            0% {
+              transform: translateX(-100%);
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+          }
+
+          @keyframes scan-horizontal-delayed {
+            0% {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              transform: translateX(-100%);
+              opacity: 0;
+            }
+          }
+
           .animate-slide-up {
             animation: slide-up 0.3s ease-out;
+          }
+
+          .animate-scan-horizontal {
+            animation: scan-horizontal 3s ease-in-out infinite;
+          }
+
+          .animate-scan-horizontal-delayed {
+            animation: scan-horizontal-delayed 3s ease-in-out 1.5s infinite;
+          }
+
+          .retro-button {
+            box-shadow:
+              0 0 5px rgba(108, 99, 255, 0.3),
+              inset 0 0 5px rgba(108, 99, 255, 0.1);
+          }
+
+          .retro-button:hover {
+            box-shadow:
+              0 0 15px rgba(108, 99, 255, 0.6),
+              0 0 30px rgba(108, 99, 255, 0.3),
+              inset 0 0 10px rgba(108, 99, 255, 0.2);
           }
         `}</style>
       </div>
