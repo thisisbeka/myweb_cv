@@ -35,13 +35,15 @@ export const AuroraText: React.FC<AuroraTextProps> = ({ text, className = '' }) 
   }, []);
 
   return (
-    <div ref={heroRef} className="relative inline-block">
-      <h1
-        ref={auroraTextRef}
-        className={`aurora-text relative z-10 ${className}`}
-      >
-        {text}
-      </h1>
+    <div className="flex justify-center">
+      <div ref={heroRef} className="relative inline-block">
+        <h1
+          ref={auroraTextRef}
+          className={`aurora-text relative z-10 ${className}`}
+        >
+          {text}
+        </h1>
+      </div>
     </div>
   );
 };
