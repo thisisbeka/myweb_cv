@@ -1,5 +1,6 @@
 import { Mail, Phone, Linkedin, Instagram, Github } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { AuroraText } from './ui/aurora-text';
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
@@ -29,9 +30,10 @@ export default function Contact() {
       <LiquidGlassBackground />
 
       <div className="max-w-5xl mx-auto relative z-10">
-        <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6 glow-violet">
-          {t('contact.title')}
-        </h2>
+        <AuroraText
+          text={t('contact.title')}
+          className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6"
+        />
         <div className="h-1 w-24 md:w-32 bg-gradient-violet mx-auto mb-8 md:mb-12 rounded-full" />
 
         <div className="text-center">

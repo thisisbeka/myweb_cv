@@ -1,6 +1,7 @@
 import { Code2, Brain, Database, Cloud, BarChart3, Box } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { AuroraText } from './ui/aurora-text';
 
 const skillCategories = [
   {
@@ -54,9 +55,10 @@ export default function Skills() {
     <section className="relative py-16 md:py-20 px-6 overflow-hidden">
       <BinaryMatrixBackground />
       <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6 glow-aluminum">
-          {t('nav.skills')}
-        </h2>
+        <AuroraText
+          text={t('nav.skills')}
+          className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6"
+        />
         <div className="h-1 w-24 md:w-32 bg-gradient-aluminum mx-auto mb-8 md:mb-12 rounded-full" />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

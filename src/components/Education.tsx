@@ -1,6 +1,7 @@
 import { GraduationCap, MapPin } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { AuroraText } from './ui/aurora-text';
 
 export default function Education() {
   const { t } = useLanguage();
@@ -28,9 +29,10 @@ export default function Education() {
     <section className="relative py-16 md:py-20 px-6 overflow-hidden">
       <ASCIIArtBackground />
       <div className="max-w-5xl mx-auto relative z-10">
-        <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold text-center mb-4 md:mb-6 glow-aluminum">
-          {t('nav.education')}
-        </h2>
+        <AuroraText
+          text={t('nav.education')}
+          className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 md:mb-6"
+        />
         <div className="h-1 w-24 md:w-32 bg-gradient-aluminum mx-auto mb-8 md:mb-12 rounded-full" />
 
         <div
