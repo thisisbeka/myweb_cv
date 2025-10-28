@@ -107,25 +107,29 @@
     background: linear-gradient(
       135deg,
       #C0C0C0 0%,
-      #E8E8E8 10%,
-      #6C63FF 20%,
-      #8B82FF 30%,
+      #06b6d4 8%,
+      #E8E8E8 16%,
+      #6C63FF 24%,
+      #8B82FF 32%,
       #C0C0C0 40%,
-      #A8A8A8 50%,
-      #E8E8E8 60%,
-      #6C63FF 70%,
+      #06b6d4 48%,
+      #A8A8A8 56%,
+      #6C63FF 64%,
+      #E8E8E8 72%,
       #8B82FF 80%,
-      #C0C0C0 90%,
-      #E8E8E8 100%
+      #06b6d4 88%,
+      #C0C0C0 100%
     );
     background-size: 400% 400%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: aurora-flow 8s ease infinite;
+    filter: saturate(1.4) brightness(1.15);
     text-shadow:
-      0 0 20px rgba(192, 192, 192, 0.3),
-      0 0 40px rgba(108, 99, 255, 0.2);
+      0 0 30px rgba(192, 192, 192, 0.5),
+      0 0 50px rgba(108, 99, 255, 0.4),
+      0 0 40px rgba(6, 182, 212, 0.3);
   }
 
   .animate-twinkle {
