@@ -1,7 +1,8 @@
-import { Briefcase, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { AuroraText } from './ui/aurora-text';
+import { RetroBriefcase } from './ui/retro-icons';
 
 export default function Experience() {
   const { t } = useLanguage();
@@ -213,7 +214,7 @@ function ExperienceContent({ experience }: { experience: typeof experiences[0] }
   return (
     <div className="group transition-all duration-300">
       <div className="flex items-center gap-2 md:gap-3 mb-3 flex-wrap">
-        <Briefcase className="w-5 h-5 md:w-6 md:h-6" style={{ color: experience.color }} />
+        <RetroBriefcase className="w-5 h-5 md:w-6 md:h-6" color={experience.color} />
         <h3 className="text-xl md:text-2xl font-bold" style={{ color: experience.color }}>
           {experience.company}
         </h3>

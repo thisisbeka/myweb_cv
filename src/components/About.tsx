@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { TrendingUp, Award, Code } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { AuroraText } from './ui/aurora-text';
+import { RetroArrowUp, RetroMedal, RetroCode } from './ui/retro-icons';
 
 export default function About() {
   const { t } = useLanguage();
@@ -68,25 +68,25 @@ export default function About() {
 
         <div className="grid grid-cols-3 gap-4 md:gap-8">
           <StatCard
-            icon={<TrendingUp className="w-10 h-10" />}
+            icon={<RetroArrowUp className="w-8 h-8 md:w-10 md:h-10" color="#EDEDED" />}
             number={4}
             label={t('about.stat1.label')}
             suffix="+"
-            color="#C0C0C0"
+            color="#EDEDED"
           />
           <StatCard
-            icon={<Award className="w-10 h-10" />}
+            icon={<RetroMedal className="w-8 h-8 md:w-10 md:h-10" color="#7B61FF" />}
             number={50}
             label={t('about.stat2.label')}
             suffix="+"
-            color="#6C63FF"
+            color="#7B61FF"
           />
           <StatCard
-            icon={<Code className="w-10 h-10" />}
+            icon={<RetroCode className="w-8 h-8 md:w-10 md:h-10" color="#EDEDED" />}
             number={15}
             label={t('about.stat3.label')}
             suffix="+"
-            color="#C0C0C0"
+            color="#EDEDED"
           />
         </div>
       </div>
