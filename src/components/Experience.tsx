@@ -2,39 +2,39 @@ import { Briefcase, Calendar } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const experiences = [
-  {
-    company: 'Vizio.ai',
-    role: 'AI Chatbot Developer',
-    period: '2024 – Present',
-    description: 'Leading development of NLP-driven conversational AI systems and LLM integration',
-    color: '#C0C0C0',
-  },
-  {
-    company: 'DataInsight LLC',
-    role: 'Data Analyst',
-    period: '2023',
-    description: 'Advanced analytics, business intelligence, and data visualization solutions',
-    color: '#6C63FF',
-  },
-  {
-    company: 'EnergyAnalytics Solutions',
-    role: 'Business Analyst',
-    period: '2021 – 2022',
-    description: 'Strategic data analysis and business process optimization',
-    color: '#C0C0C0',
-  },
-  {
-    company: 'TechNova Analytics',
-    role: 'Junior Data Scientist',
-    period: '2020 – 2021',
-    description: 'Machine learning model development and data pipeline implementation',
-    color: '#6C63FF',
-  },
-];
-
 export default function Experience() {
   const { t } = useLanguage();
+
+  const experiences = [
+    {
+      company: t('experience.job1.company'),
+      role: t('experience.job1.role'),
+      period: t('experience.job1.period'),
+      description: t('experience.job1.description'),
+      color: '#C0C0C0',
+    },
+    {
+      company: t('experience.job2.company'),
+      role: t('experience.job2.role'),
+      period: t('experience.job2.period'),
+      description: t('experience.job2.description'),
+      color: '#6C63FF',
+    },
+    {
+      company: t('experience.job3.company'),
+      role: t('experience.job3.role'),
+      period: t('experience.job3.period'),
+      description: t('experience.job3.description'),
+      color: '#C0C0C0',
+    },
+    {
+      company: t('experience.job4.company'),
+      role: t('experience.job4.role'),
+      period: t('experience.job4.period'),
+      description: t('experience.job4.description'),
+      color: '#6C63FF',
+    },
+  ];
 
   return (
     <section className="relative py-16 md:py-20 px-6 overflow-hidden">

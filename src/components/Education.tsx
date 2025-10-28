@@ -45,28 +45,23 @@ export default function Education() {
               </div>
               <div>
                 <h3 className="text-xl md:text-3xl font-bold text-[#C0C0C0] uppercase tracking-wider">
-                  Bachelor of Computer Science
+                  {t('education.degree.title')}
                 </h3>
-                <p className="text-gray-400 text-base md:text-lg mt-1">2017 – 2022</p>
+                <p className="text-gray-400 text-base md:text-lg mt-1">{t('education.degree.period')}</p>
               </div>
             </div>
 
             <div className="flex items-center gap-2 md:gap-3 mb-6">
               <MapPin className="w-4 h-4 md:w-5 md:h-5 text-[#6C63FF]" />
               <p className="text-base md:text-xl text-gray-300">
-                <span className="font-semibold text-[#6C63FF]">Innopolis University</span>
+                <span className="font-semibold text-[#6C63FF]">{t('education.degree.university')}</span>
                 <span className="text-gray-500 mx-2">•</span>
-                <span className="text-gray-400">Russia</span>
+                <span className="text-gray-400">{t('education.degree.location')}</span>
               </p>
             </div>
 
             <div className="mt-6 md:mt-8">
-              <p className="text-sm md:text-base text-gray-400 leading-relaxed">
-                Specialized in <span className="text-[#C0C0C0] font-semibold">Artificial Intelligence</span>,{' '}
-                <span className="text-[#6C63FF] font-semibold">Machine Learning</span>, and{' '}
-                <span className="text-[#C0C0C0] font-semibold">Data Science</span>. Completed advanced coursework in
-                NLP, Deep Learning, and Software Engineering.
-              </p>
+              <p className="text-sm md:text-base text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('education.degree.description') }} />
             </div>
 
           <style>{`
