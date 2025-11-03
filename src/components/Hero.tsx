@@ -56,22 +56,15 @@ export default function Hero() {
           <div className="absolute inset-0 retro-scan-effect pointer-events-none" />
         </div>
 
-        <div className="min-h-[80px] md:min-h-[120px] flex items-center justify-center mb-8 md:mb-12">
-          <div className="relative group">
-            <div className="relative glass-morphism px-6 sm:px-8 md:px-12 py-5 md:py-8 rounded-xl crt-effect border-2 border-[#00ff41]/30 backdrop-blur-xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#00ff41]/5 via-transparent to-[#6C63FF]/5 rounded-xl" />
-              <p className="text-xl sm:text-2xl md:text-4xl text-[#C0C0C0] font-light tracking-wider font-['IBM_Plex_Sans'] relative z-10">
-                <span className="text-[#00ff41] font-bold">&gt;_</span>
-                <span className="inline-block ml-2">{text}</span>
-                <span className="animate-terminal-blink opacity-60">█</span>
-              </p>
-              <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00ff41]/60 to-transparent animate-scan-top" />
-              <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#6C63FF]/60 to-transparent animate-scan-bottom" />
-            </div>
-          </div>
+        <div className="min-h-[60px] md:min-h-[80px] flex items-center justify-center mb-8 md:mb-12">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#C0C0C0] font-light tracking-wider font-['IBM_Plex_Sans']">
+            <span className="text-[#00ff41] font-bold">&gt;_</span>
+            <span className="inline-block ml-2">{text}</span>
+            <span className="animate-terminal-blink opacity-60">█</span>
+          </p>
         </div>
 
-        <div className="flex gap-6 md:gap-8 justify-center flex-wrap">
+        <div className="flex gap-4 justify-center">
           <a
             href="https://github.com/thisisbeka"
             target="_blank"
@@ -80,10 +73,8 @@ export default function Hero() {
           >
             <div className="relative px-8 md:px-12 py-4 md:py-5 glass-morphism rounded-xl overflow-hidden border-2 border-[#C0C0C0]/40 backdrop-blur-xl group-hover:border-[#00ff41]/60 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-[#C0C0C0]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10 text-[#C0C0C0] font-bold tracking-[0.2em] font-['Rajdhani'] text-base md:text-lg uppercase group-hover:text-[#00ff41] transition-colors duration-300 flex items-center gap-2">
-                <span className="text-2xl">◢</span>
+              <span className="relative z-10 text-[#C0C0C0] font-bold tracking-[0.2em] font-['Rajdhani'] text-base md:text-lg uppercase group-hover:text-[#00ff41] transition-colors duration-300">
                 {t('hero.projects')}
-                <span className="text-2xl">◣</span>
               </span>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#C0C0C0] to-[#00ff41] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
             </div>
@@ -94,10 +85,8 @@ export default function Hero() {
           >
             <div className="relative px-8 md:px-12 py-4 md:py-5 glass-morphism rounded-xl overflow-hidden border-2 border-[#6C63FF]/50 backdrop-blur-xl group-hover:border-[#00ff41]/70 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-[#6C63FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10 text-[#6C63FF] font-bold tracking-[0.2em] font-['Rajdhani'] text-base md:text-lg uppercase group-hover:text-[#00ff41] transition-colors duration-300 flex items-center gap-2">
-                <span className="text-2xl">◢</span>
+              <span className="relative z-10 text-[#6C63FF] font-bold tracking-[0.2em] font-['Rajdhani'] text-base md:text-lg uppercase group-hover:text-[#00ff41] transition-colors duration-300">
                 {t('hero.contact')}
-                <span className="text-2xl">◣</span>
               </span>
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#6C63FF] via-[#00ff41] to-[#6C63FF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
               <div className="absolute inset-0 retro-glitch-effect opacity-0 group-hover:opacity-30 pointer-events-none" />
@@ -369,7 +358,6 @@ function RetroGrid() {
           <div className="absolute top-3/4 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#C0C0C0]/50 to-transparent animate-scan-line-delayed-2" />
         </div>
 
-        <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#00ff41]/30 rounded-full animate-spin-slow" style={{ animationDuration: '20s' }} />
         <div className="absolute bottom-20 right-20 w-40 h-40 border-2 border-[#6C63FF]/30 animate-spin-slow" style={{ animationDuration: '25s', clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }} />
         <div className="absolute top-1/3 right-10 w-24 h-24 border-2 border-[#C0C0C0]/30 animate-spin-slow" style={{ animationDuration: '30s', clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)' }} />
       </div>
