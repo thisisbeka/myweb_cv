@@ -141,7 +141,7 @@ function ContactCard({ icon, label, value, href, color }: ContactCardProps) {
       <div className="flex justify-center mb-3 md:mb-4" style={{ color }}>
         <div className="w-6 h-6 md:w-8 md:h-8">{icon}</div>
       </div>
-      <div className="text-xs md:text-sm uppercase tracking-wider text-gray-500 mb-2">{label}</div>
+      <div className="text-xs md:text-sm uppercase tracking-wider text-gray-300 mb-2">{label}</div>
       <div className="text-[10px] md:text-xs text-gray-500 font-medium break-words group-hover:text-gray-300 transition-colors duration-300">
         {value}
       </div>
