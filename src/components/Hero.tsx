@@ -35,13 +35,12 @@ export default function Hero() {
           <div className="absolute inset-0 animate-holo-ring" />
           <div className="absolute inset-0 animate-holo-ring-delayed" />
           <div className="relative holographic-frame">
-            <div className="absolute -inset-8 bg-gradient-to-r from-[#00ff41]/20 via-[#C0C0C0]/20 to-[#6C63FF]/20 blur-2xl animate-pulse-slow" />
             <img
               src="/logo_bek.png"
               alt="THISISBEKA Logo"
               className="w-56 h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 mx-auto mb-6 md:mb-4 animate-breathe relative z-10"
               style={{
-                filter: 'brightness(1.3) contrast(1.1) drop-shadow(0 0 40px rgba(192, 192, 192, 0.5))'
+                filter: 'brightness(1.3) contrast(1.1)'
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
@@ -50,7 +49,6 @@ export default function Hero() {
         </div>
 
         <div className="relative mb-6 md:mb-8">
-          <div className="absolute -inset-4 bg-gradient-to-r from-[#6C63FF]/20 via-[#00ff41]/20 to-[#C0C0C0]/20 blur-3xl animate-color-shift" />
           <AuroraText
             text={t('hero.title')}
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[0.15em] md:tracking-[0.25em] relative z-10 retro-chrome-text"
@@ -60,13 +58,12 @@ export default function Hero() {
 
         <div className="min-h-[80px] md:min-h-[120px] flex items-center justify-center mb-8 md:mb-12">
           <div className="relative group">
-            <div className="absolute -inset-2 bg-gradient-to-r from-[#00ff41] via-[#6C63FF] to-[#C0C0C0] rounded-xl blur opacity-20 group-hover:opacity-40 transition-opacity duration-500 animate-tilt" />
             <div className="relative glass-morphism px-6 sm:px-8 md:px-12 py-5 md:py-8 rounded-xl crt-effect border-2 border-[#00ff41]/30 backdrop-blur-xl">
               <div className="absolute inset-0 bg-gradient-to-br from-[#00ff41]/5 via-transparent to-[#6C63FF]/5 rounded-xl" />
               <p className="text-xl sm:text-2xl md:text-4xl text-[#C0C0C0] font-light tracking-wider font-['IBM_Plex_Sans'] relative z-10">
-                <span className="text-[#00ff41] neon-text-green font-bold">&gt;_</span>
+                <span className="text-[#00ff41] font-bold">&gt;_</span>
                 <span className="inline-block ml-2">{text}</span>
-                <span className="animate-terminal-blink opacity-60 neon-text-green">█</span>
+                <span className="animate-terminal-blink opacity-60">█</span>
               </p>
               <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00ff41]/60 to-transparent animate-scan-top" />
               <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#6C63FF]/60 to-transparent animate-scan-bottom" />
@@ -81,7 +78,6 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="group relative"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#C0C0C0] to-[#00ff41] rounded-xl blur opacity-50 group-hover:opacity-100 transition duration-500 animate-tilt" />
             <div className="relative px-8 md:px-12 py-4 md:py-5 glass-morphism rounded-xl overflow-hidden border-2 border-[#C0C0C0]/40 backdrop-blur-xl group-hover:border-[#00ff41]/60 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-[#C0C0C0]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="relative z-10 text-[#C0C0C0] font-bold tracking-[0.2em] font-['Rajdhani'] text-base md:text-lg uppercase group-hover:text-[#00ff41] transition-colors duration-300 flex items-center gap-2">
@@ -96,10 +92,9 @@ export default function Hero() {
             onClick={() => setShowContactModal(true)}
             className="group relative"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#6C63FF] via-[#00ff41] to-[#6C63FF] rounded-xl blur opacity-60 group-hover:opacity-100 transition duration-500 animate-tilt" />
             <div className="relative px-8 md:px-12 py-4 md:py-5 glass-morphism rounded-xl overflow-hidden border-2 border-[#6C63FF]/50 backdrop-blur-xl group-hover:border-[#00ff41]/70 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-[#6C63FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10 text-[#6C63FF] font-bold tracking-[0.2em] font-['Rajdhani'] text-base md:text-lg uppercase neon-text-violet group-hover:text-[#00ff41] transition-colors duration-300 flex items-center gap-2">
+              <span className="relative z-10 text-[#6C63FF] font-bold tracking-[0.2em] font-['Rajdhani'] text-base md:text-lg uppercase group-hover:text-[#00ff41] transition-colors duration-300 flex items-center gap-2">
                 <span className="text-2xl">◢</span>
                 {t('hero.contact')}
                 <span className="text-2xl">◣</span>
@@ -239,7 +234,6 @@ export default function Hero() {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
-          filter: drop-shadow(0 0 30px rgba(0, 255, 65, 0.5)) drop-shadow(0 0 60px rgba(108, 99, 255, 0.3));
         }
 
         .retro-scan-effect {
@@ -252,21 +246,6 @@ export default function Hero() {
           );
         }
 
-        .neon-text-green {
-          text-shadow:
-            0 0 5px #00ff41,
-            0 0 10px #00ff41,
-            0 0 20px #00ff41,
-            0 0 40px #00ff41;
-        }
-
-        .neon-text-violet {
-          text-shadow:
-            0 0 5px #6C63FF,
-            0 0 10px #6C63FF,
-            0 0 20px #6C63FF,
-            0 0 40px #6C63FF;
-        }
 
         .retro-glitch-effect {
           background: repeating-linear-gradient(
@@ -354,7 +333,6 @@ function RetroGrid() {
               width: `${particle.size}px`,
               height: `${particle.size}px`,
               background: particle.color,
-              boxShadow: `0 0 ${particle.size * 4}px ${particle.color}`,
               animation: `float-particle ${15 / particle.speed}s linear ${i * 0.5}s infinite`,
             }}
           />
@@ -375,7 +353,6 @@ function RetroGrid() {
                 color: color,
                 opacity: Math.random() * 0.4 + 0.2,
                 animation: `float-code ${Math.random() * 25 + 20}s linear ${Math.random() * 8}s infinite`,
-                textShadow: `0 0 10px ${color}, 0 0 20px ${color}, 0 0 30px ${color}`,
                 filter: 'blur(0.3px)',
               }}
             >
@@ -387,9 +364,9 @@ function RetroGrid() {
 
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#00ff41]/50 to-transparent animate-scan-line" style={{ boxShadow: '0 0 20px #00ff41' }} />
-          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#6C63FF]/50 to-transparent animate-scan-line-delayed" style={{ boxShadow: '0 0 20px #6C63FF' }} />
-          <div className="absolute top-3/4 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#C0C0C0]/50 to-transparent animate-scan-line-delayed-2" style={{ boxShadow: '0 0 20px #C0C0C0' }} />
+          <div className="absolute top-1/4 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#00ff41]/50 to-transparent animate-scan-line" />
+          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#6C63FF]/50 to-transparent animate-scan-line-delayed" />
+          <div className="absolute top-3/4 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#C0C0C0]/50 to-transparent animate-scan-line-delayed-2" />
         </div>
 
         <div className="absolute top-10 left-10 w-32 h-32 border-2 border-[#00ff41]/30 rounded-full animate-spin-slow" style={{ animationDuration: '20s' }} />
