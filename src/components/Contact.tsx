@@ -138,10 +138,11 @@ function ContactCard({ icon, label, value, href, color }: ContactCardProps) {
       rel="noopener noreferrer"
       className="group transition-all duration-300 inline-flex flex-col items-center"
     >
-      <div className="flex justify-center items-center group-hover:scale-110 transition-transform duration-300 mb-1.5" style={{ color }}>
+      <div className="flex justify-center items-center group-hover:scale-110 transition-transform duration-300 mb-3" style={{ color }}>
         <div className="w-12 h-12 md:w-16 md:h-16">{icon}</div>
       </div>
-      <div className="text-xs md:text-sm uppercase tracking-wider text-gray-500 group-hover:text-gray-300 transition-colors duration-300 text-center whitespace-nowrap">{label}</div>
+      <div className="text-xs md:text-sm uppercase tracking-wider text-gray-500 group-hover:text-gray-300 transition-colors duration-300 text-center whitespace-nowrap mb-2">{label}</div>
+      <div className="text-sm md:text-base text-gray-400 group-hover:text-gray-200 transition-colors duration-300 text-center">{value}</div>
     </a>
   );
 }
