@@ -17,50 +17,78 @@ export default function About() {
         <div className="h-1 w-24 md:w-32 bg-gradient-aluminum mx-auto mb-8 md:mb-12 rounded-full" />
 
         <div className="mb-10 md:mb-16 max-w-4xl mx-auto">
-          <div className="font-mono text-left px-4">
-            <div className="text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed space-y-2">
-              <div>
-                <span className="text-[#6C63FF]">SELECT</span>{' '}
-                <span className="text-[#C0C0C0]">*</span>
+          <div className="retro-code-window">
+            <div className="retro-window-header">
+              <div className="flex items-center gap-2">
+                <div className="retro-window-button" style={{ backgroundColor: '#ff5f56' }}></div>
+                <div className="retro-window-button" style={{ backgroundColor: '#ffbd2e' }}></div>
+                <div className="retro-window-button" style={{ backgroundColor: '#27c93f' }}></div>
               </div>
-              <div>
-                <span className="text-[#6C63FF]">FROM</span>{' '}
-                <span className="text-white">developers</span>
+              <div className="retro-window-title">developer_query.sql</div>
+              <div className="retro-window-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="pixelated">
+                  <rect x="6" y="6" width="3" height="3" fill="currentColor"/>
+                  <rect x="9" y="6" width="3" height="3" fill="currentColor"/>
+                  <rect x="12" y="6" width="3" height="3" fill="currentColor"/>
+                  <rect x="15" y="6" width="3" height="3" fill="currentColor"/>
+                  <rect x="6" y="9" width="3" height="3" fill="currentColor"/>
+                  <rect x="15" y="9" width="3" height="3" fill="currentColor"/>
+                  <rect x="6" y="12" width="3" height="3" fill="currentColor"/>
+                  <rect x="9" y="12" width="3" height="3" fill="currentColor"/>
+                  <rect x="12" y="12" width="3" height="3" fill="currentColor"/>
+                  <rect x="15" y="12" width="3" height="3" fill="currentColor"/>
+                  <rect x="6" y="15" width="3" height="3" fill="currentColor"/>
+                  <rect x="15" y="15" width="3" height="3" fill="currentColor"/>
+                </svg>
               </div>
-              <div>
-                <span className="text-[#6C63FF]">WHERE</span>
-              </div>
-              <div className="pl-4">
-                <span className="text-white">expertise</span>{' '}
-                <span className="text-[#C0C0C0]">IN</span>{' '}
-                <span className="text-[#00ff41]">(</span>
-                <span className="text-[#FFD700]">'AI Chatbots'</span>
-                <span className="text-[#C0C0C0]">,</span>{' '}
-                <span className="text-[#FFD700]">'NLP'</span>
-                <span className="text-[#C0C0C0]">,</span>{' '}
-                <span className="text-[#FFD700]">'Data Analytics'</span>
-                <span className="text-[#00ff41]">)</span>
-              </div>
-              <div className="pl-4">
-                <span className="text-[#6C63FF]">AND</span>{' '}
-                <span className="text-white">skills</span>{' '}
-                <span className="text-[#C0C0C0]">LIKE</span>{' '}
-                <span className="text-[#FFD700]">'%ML Model Deployment%'</span>
-              </div>
-              <div className="pl-4">
-                <span className="text-[#6C63FF]">AND</span>{' '}
-                <span className="text-white">experience_years</span>{' '}
-                <span className="text-[#C0C0C0]">&gt;=</span>{' '}
-                <span className="text-[#00ff41]">4</span>
-              </div>
-              <div>
-                <span className="text-[#6C63FF]">ORDER BY</span>{' '}
-                <span className="text-white">passion</span>{' '}
-                <span className="text-[#6C63FF]">DESC</span>
-                <span className="text-[#C0C0C0]">;</span>
-              </div>
-              <div className="mt-4 text-[#00ff41] text-xs md:text-sm">
-                <span className="text-gray-500">-- Query returned 1 row</span>
+            </div>
+            <div className="retro-window-content">
+              <div className="font-mono text-left">
+                <div className="text-sm md:text-base lg:text-lg text-gray-300 leading-relaxed space-y-2">
+                  <div>
+                    <span className="text-[#6C63FF]">SELECT</span>{' '}
+                    <span className="text-[#C0C0C0]">*</span>
+                  </div>
+                  <div>
+                    <span className="text-[#6C63FF]">FROM</span>{' '}
+                    <span className="text-white">developers</span>
+                  </div>
+                  <div>
+                    <span className="text-[#6C63FF]">WHERE</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-white">expertise</span>{' '}
+                    <span className="text-[#C0C0C0]">IN</span>{' '}
+                    <span className="text-[#00ff41]">(</span>
+                    <span className="text-[#FFD700]">'AI Chatbots'</span>
+                    <span className="text-[#C0C0C0]">,</span>{' '}
+                    <span className="text-[#FFD700]">'NLP'</span>
+                    <span className="text-[#C0C0C0]">,</span>{' '}
+                    <span className="text-[#FFD700]">'Data Analytics'</span>
+                    <span className="text-[#00ff41]">)</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-[#6C63FF]">AND</span>{' '}
+                    <span className="text-white">skills</span>{' '}
+                    <span className="text-[#C0C0C0]">LIKE</span>{' '}
+                    <span className="text-[#FFD700]">'%ML Model Deployment%'</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-[#6C63FF]">AND</span>{' '}
+                    <span className="text-white">experience_years</span>{' '}
+                    <span className="text-[#C0C0C0]">&gt;=</span>{' '}
+                    <span className="text-[#00ff41]">4</span>
+                  </div>
+                  <div>
+                    <span className="text-[#6C63FF]">ORDER BY</span>{' '}
+                    <span className="text-white">passion</span>{' '}
+                    <span className="text-[#6C63FF]">DESC</span>
+                    <span className="text-[#C0C0C0]">;</span>
+                  </div>
+                  <div className="mt-4 text-[#00ff41] text-xs md:text-sm">
+                    <span className="text-gray-500">-- Query returned 1 row</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

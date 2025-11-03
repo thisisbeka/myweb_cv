@@ -236,4 +236,112 @@
     mix-blend-mode: overlay;
     pointer-events: none;
   }
+
+  .retro-code-window {
+    background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+    border: 3px solid #2a2a2a;
+    border-radius: 8px;
+    box-shadow:
+      0 10px 40px rgba(0, 0, 0, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+  }
+
+  .retro-window-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #2d2d2d 0%, #1f1f1f 100%);
+    border-bottom: 2px solid #3a3a3a;
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .retro-window-button {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow:
+      inset 0 1px 1px rgba(255, 255, 255, 0.3),
+      0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .retro-window-title {
+    flex: 1;
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #888;
+    letter-spacing: 0.02em;
+  }
+
+  .retro-window-icon {
+    color: #555;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .retro-window-icon .pixelated {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+
+  .retro-window-content {
+    padding: 24px 20px;
+    background: linear-gradient(145deg, #151515 0%, #0a0a0a 100%);
+    position: relative;
+  }
+
+  .retro-window-content::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.01) 0px,
+        transparent 1px,
+        transparent 2px
+      );
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .retro-code-window {
+      border-width: 2px;
+    }
+
+    .retro-window-header {
+      padding: 10px 12px;
+    }
+
+    .retro-window-button {
+      width: 12px;
+      height: 12px;
+    }
+
+    .retro-window-title {
+      font-size: 11px;
+    }
+
+    .retro-window-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .retro-window-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .retro-window-content {
+      padding: 16px 12px;
+    }
+  }
 }
