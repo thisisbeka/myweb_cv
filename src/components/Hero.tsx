@@ -30,67 +30,49 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <RetroGrid />
 
-      <div className="relative z-10 text-center px-6 max-w-6xl -mt-20 md:-mt-32">
-        <div className="mb-8 md:mb-6 animate-fade-in relative">
-          <div className="absolute inset-0 animate-holo-ring" />
-          <div className="absolute inset-0 animate-holo-ring-delayed" />
-          <div className="relative holographic-frame">
-            <img
-              src="/logo_bek.png"
-              alt="THISISBEKA Logo"
-              className="w-56 h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 mx-auto mb-6 md:mb-4 animate-breathe relative z-10"
-              style={{
-                filter: 'brightness(1.3) contrast(1.1)'
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
-            <div className="absolute -inset-4 border-2 border-[#C0C0C0]/30 retro-corners animate-corner-glow" />
+      <div className="relative z-10 text-center px-6 max-w-5xl -mt-20 md:-mt-32">
+        <div className="mb-8 md:mb-6 animate-fade-in">
+          <img
+            src="/logo_bek.png"
+            alt="THISISBEKA Logo"
+            className="w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 mx-auto mb-6 md:mb-4 animate-breathe"
+            style={{ filter: 'brightness(1.2)' }}
+          />
+        </div>
+
+        <AuroraText
+          text={t('hero.title')}
+          className="text-4xl sm:text-6xl md:text-6xl font-bold mb-6 md:mb-8 tracking-[0.15em] md:tracking-[0.2em]"
+        />
+
+        <div className="min-h-[80px] md:min-h-[100px] flex items-center justify-center mb-8 md:mb-12">
+          <div className="glass-morphism px-4 sm:px-6 md:px-8 py-4 md:py-6 rounded-lg crt-effect">
+            <p className="text-lg sm:text-xl md:text-3xl text-[#C0C0C0] font-light tracking-wider font-['IBM_Plex_Sans']">
+              <span className="text-[#6C63FF]">&gt;_</span> {text}<span className="animate-terminal-blink opacity-40">|</span>
+            </p>
           </div>
         </div>
 
-        <div className="relative mb-6 md:mb-8">
-          <AuroraText
-            text={t('hero.title')}
-            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[0.15em] md:tracking-[0.25em] relative z-10 retro-chrome-text"
-          />
-          <div className="absolute inset-0 retro-scan-effect pointer-events-none" />
-        </div>
-
-        <div className="min-h-[60px] md:min-h-[80px] flex items-center justify-center mb-8 md:mb-12">
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#C0C0C0] font-light tracking-wider font-['IBM_Plex_Sans']">
-            <span className="text-[#00ff41] font-bold">&gt;_</span>
-            <span className="inline-block ml-2">{text}</span>
-            <span className="animate-terminal-blink opacity-60">█</span>
-          </p>
-        </div>
-
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 md:gap-6 justify-center flex-wrap">
           <a
             href="https://github.com/thisisbeka"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative"
+            className="group relative px-6 md:px-8 py-3 md:py-4 glass-morphism rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 crt-effect"
           >
-            <div className="relative px-8 md:px-12 py-4 md:py-5 glass-morphism rounded-xl overflow-hidden border-2 border-[#C0C0C0]/40 backdrop-blur-xl group-hover:border-[#00ff41]/60 transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#C0C0C0]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10 text-[#C0C0C0] font-bold tracking-[0.2em] font-['Rajdhani'] text-base md:text-lg uppercase group-hover:text-[#00ff41] transition-colors duration-300">
-                {t('hero.projects')}
-              </span>
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#C0C0C0] to-[#00ff41] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-            </div>
+            <span className="relative z-10 text-[#C0C0C0] font-semibold tracking-wider font-['Rajdhani'] text-sm md:text-base">
+              {t('hero.projects')}
+            </span>
+            <div className="absolute inset-0 bg-gradient-aluminum opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
           </a>
           <button
             onClick={() => setShowContactModal(true)}
-            className="group relative"
+            className="group relative px-6 md:px-8 py-3 md:py-4 glass-morphism rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 crt-effect"
           >
-            <div className="relative px-8 md:px-12 py-4 md:py-5 glass-morphism rounded-xl overflow-hidden border-2 border-[#6C63FF]/50 backdrop-blur-xl group-hover:border-[#00ff41]/70 transition-all duration-300">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#6C63FF]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="relative z-10 text-[#6C63FF] font-bold tracking-[0.2em] font-['Rajdhani'] text-base md:text-lg uppercase group-hover:text-[#00ff41] transition-colors duration-300">
-                {t('hero.contact')}
-              </span>
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#6C63FF] via-[#00ff41] to-[#6C63FF] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-              <div className="absolute inset-0 retro-glitch-effect opacity-0 group-hover:opacity-30 pointer-events-none" />
-            </div>
+            <span className="relative z-10 text-[#6C63FF] font-semibold tracking-wider font-['Rajdhani'] text-sm md:text-base">
+              {t('hero.contact')}
+            </span>
+            <div className="absolute inset-0 bg-gradient-violet opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
           </button>
         </div>
       </div>
@@ -109,52 +91,16 @@ export default function Hero() {
         }
 
         @keyframes breathe {
-          0%, 100% { transform: scale(1) rotate(0deg); }
-          25% { transform: scale(1.05) rotate(1deg); }
-          50% { transform: scale(1.08) rotate(0deg); }
-          75% { transform: scale(1.05) rotate(-1deg); }
-        }
-
-        @keyframes holo-ring {
-          0% { transform: scale(0.95); opacity: 0; }
-          50% { opacity: 0.3; }
-          100% { transform: scale(1.3); opacity: 0; }
-        }
-
-        @keyframes corner-glow {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.8; }
-        }
-
-        @keyframes color-shift {
-          0%, 100% { opacity: 0.3; filter: hue-rotate(0deg); }
-          50% { opacity: 0.6; filter: hue-rotate(30deg); }
-        }
-
-        @keyframes tilt {
-          0%, 100% { transform: rotate(-1deg); }
-          50% { transform: rotate(1deg); }
-        }
-
-        @keyframes scan-top {
-          0% { transform: translateX(-100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateX(100%); opacity: 0; }
-        }
-
-        @keyframes scan-bottom {
-          0% { transform: translateX(100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateX(-100%); opacity: 0; }
-        }
-
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.3; transform: scale(0.95); }
-          50% { opacity: 0.6; transform: scale(1.05); }
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.05);
+          }
         }
 
         .animate-terminal-blink {
-          animation: terminal-blink 0.8s infinite;
+          animation: terminal-blink 1s infinite;
         }
 
         .animate-fade-in {
@@ -162,88 +108,7 @@ export default function Hero() {
         }
 
         .animate-breathe {
-          animation: breathe 4s ease-in-out infinite;
-        }
-
-        .animate-holo-ring {
-          position: absolute;
-          inset: -20px;
-          border: 2px solid #00ff41;
-          border-radius: 50%;
-          animation: holo-ring 3s ease-out infinite;
-        }
-
-        .animate-holo-ring-delayed {
-          position: absolute;
-          inset: -20px;
-          border: 2px solid #6C63FF;
-          border-radius: 50%;
-          animation: holo-ring 3s ease-out 1.5s infinite;
-        }
-
-        .animate-corner-glow {
-          animation: corner-glow 2s ease-in-out infinite;
-        }
-
-        .animate-color-shift {
-          animation: color-shift 8s ease-in-out infinite;
-        }
-
-        .animate-tilt {
-          animation: tilt 10s ease-in-out infinite;
-        }
-
-        .animate-pulse-slow {
-          animation: pulse-slow 4s ease-in-out infinite;
-        }
-
-        .animate-scan-top {
-          animation: scan-top 3s ease-in-out infinite;
-        }
-
-        .animate-scan-bottom {
-          animation: scan-bottom 3s ease-in-out 1.5s infinite;
-        }
-
-        .retro-corners {
-          clip-path: polygon(
-            0 0, 20px 0, 20px 2px, 2px 2px, 2px 20px, 0 20px,
-            0 100%, 20px 100%, 20px calc(100% - 2px), 2px calc(100% - 2px), 2px calc(100% - 20px), 0 calc(100% - 20px),
-            100% calc(100% - 0), calc(100% - 20px) 100%, calc(100% - 20px) calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) calc(100% - 20px), 100% calc(100% - 20px),
-            100% 0, calc(100% - 20px) 0, calc(100% - 20px) 2px, calc(100% - 2px) 2px, calc(100% - 2px) 20px, 100% 20px
-          );
-        }
-
-        .holographic-frame {
-          position: relative;
-        }
-
-        .retro-chrome-text {
-          background: linear-gradient(to bottom, #ffffff 0%, #C0C0C0 40%, #00ff41 70%, #6C63FF 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .retro-scan-effect {
-          background: repeating-linear-gradient(
-            0deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 255, 65, 0.03) 2px,
-            rgba(0, 255, 65, 0.03) 4px
-          );
-        }
-
-
-        .retro-glitch-effect {
-          background: repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 2px,
-            rgba(0, 255, 65, 0.1) 2px,
-            rgba(0, 255, 65, 0.1) 4px
-          );
+          animation: breathe 3s ease-in-out infinite;
         }
       `}</style>
     </section>
@@ -251,208 +116,131 @@ export default function Hero() {
 }
 
 function RetroGrid() {
-  const [particles, setParticles] = useState<Array<{x: number, y: number, size: number, speed: number, color: string}>>([]);
-
-  useEffect(() => {
-    const newParticles = Array.from({ length: 30 }, () => ({
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 3 + 1,
-      speed: Math.random() * 2 + 1,
-      color: ['#00ff41', '#6C63FF', '#C0C0C0'][Math.floor(Math.random() * 3)]
-    }));
-    setParticles(newParticles);
-  }, []);
-
   const codeSnippets = [
-    '> INITIALIZING NEURAL NETWORK...',
-    '> AI.MATRIX.LOAD()',
-    '> QUANTUM_COMPUTE()',
-    '> BLOCKCHAIN_VERIFY()',
-    '> ML_ALGORITHM.EXECUTE()',
-    '> DATA_STREAM.ACTIVE',
-    '> CYBERSECURITY.SCAN()',
-    '> DEEP_LEARNING.OPTIMIZE()',
-    '> PREDICTIVE_ANALYTICS()',
-    '> CLOUD_SYNC.ONLINE',
-    '> EDGE_COMPUTING.RUN()',
-    '> API.QUANTUM.CONNECT()',
-    '> NEURAL.PROCESS.COMPLETE',
-    '> REAL_TIME.ANALYTICS()',
-    '> CRYPTO.SECURE.HASH()',
-    '> BIG_DATA.PIPELINE()',
-    '> TENSOR_FLOW.ACTIVE',
-    '> AUTONOMOUS.AI.READY',
-    '> DISTRIBUTED_SYSTEM.OK',
-    '> HYPER_CONVERGED.SYNC',
+    'const AI = () => {}',
+    'function analyze(data)',
+    'import { ML }',
+    'neural.network()',
+    'async predict()',
+    'class DataModel',
+    'export default',
+    'return result',
+    'if (condition)',
+    'for (let i = 0)',
+    'map(item => {})',
+    'filter(data)',
+    'reduce(acc)',
+    'await fetch()',
+    'try { catch }',
+    'switch (case)',
+    'console.log()',
+    'useState()',
+    'useEffect()',
+    '=> { return }',
   ];
 
   return (
     <div className="absolute inset-0">
-      <div className="absolute inset-0 retro-grid opacity-40" style={{
-        perspective: '1500px',
+      <div className="absolute inset-0 retro-grid opacity-30" style={{
+        perspective: '1000px',
         transformStyle: 'preserve-3d',
       }}>
         <div
           className="absolute inset-0 retro-grid"
           style={{
-            transform: 'rotateX(65deg) translateZ(-600px)',
+            transform: 'rotateX(60deg) translateZ(-500px)',
             transformOrigin: 'center bottom',
-            background: 'linear-gradient(180deg, transparent 0%, rgba(0, 255, 65, 0.15) 40%, rgba(108, 99, 255, 0.15) 70%, transparent 100%)',
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            transform: 'rotateX(65deg) translateZ(-600px)',
-            transformOrigin: 'center bottom',
-            background: 'radial-gradient(circle at 50% 50%, rgba(0, 255, 65, 0.1) 0%, transparent 70%)',
+            background: 'linear-gradient(180deg, transparent 0%, rgba(192, 192, 192, 0.1) 50%, transparent 100%)',
           }}
         />
       </div>
 
       <div className="absolute inset-0 overflow-hidden">
-        {particles.map((particle, i) => (
+        {codeSnippets.map((code, i) => (
           <div
             key={i}
-            className="absolute rounded-full animate-float-particle"
+            className="absolute font-mono text-xs md:text-sm whitespace-nowrap"
             style={{
-              left: `${particle.x}%`,
-              top: `${particle.y}%`,
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              background: particle.color,
-              animation: `float-particle ${15 / particle.speed}s linear ${i * 0.5}s infinite`,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              color: i % 3 === 0 ? '#C0C0C0' : i % 3 === 1 ? '#6C63FF' : '#8B82FF',
+              opacity: Math.random() * 0.3 + 0.1,
+              animation: `float-code ${Math.random() * 20 + 15}s linear ${Math.random() * 5}s infinite`,
+              textShadow: '0 0 10px rgba(192, 192, 192, 0.3)',
             }}
-          />
+          >
+            {code}
+          </div>
         ))}
       </div>
 
-      <div className="absolute inset-0 overflow-hidden">
-        {codeSnippets.map((code, i) => {
-          const colors = ['#00ff41', '#6C63FF', '#C0C0C0'];
-          const color = colors[i % 3];
-          return (
-            <div
-              key={i}
-              className="absolute font-mono text-xs md:text-sm whitespace-nowrap font-bold tracking-wider"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                color: color,
-                opacity: Math.random() * 0.4 + 0.2,
-                animation: `float-code ${Math.random() * 25 + 20}s linear ${Math.random() * 8}s infinite`,
-                filter: 'blur(0.3px)',
-              }}
-            >
-              {code}
-            </div>
-          );
-        })}
-      </div>
-
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#00ff41]/50 to-transparent animate-scan-line" />
-          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#6C63FF]/50 to-transparent animate-scan-line-delayed" />
-          <div className="absolute top-3/4 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#C0C0C0]/50 to-transparent animate-scan-line-delayed-2" />
-        </div>
-
-        <div className="absolute bottom-20 right-20 w-40 h-40 border-2 border-[#6C63FF]/30 animate-spin-slow" style={{ animationDuration: '25s', clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)' }} />
-        <div className="absolute top-1/3 right-10 w-24 h-24 border-2 border-[#C0C0C0]/30 animate-spin-slow" style={{ animationDuration: '30s', clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)' }} />
+        <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C0C0C0]/30 to-transparent animate-scan-line" />
+        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#6C63FF]/30 to-transparent animate-scan-line-delayed" />
+        <div className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#C0C0C0]/30 to-transparent animate-scan-line-delayed-2" />
       </div>
 
       <style>{`
         @keyframes float-code {
           0% {
-            transform: translateY(100vh) translateX(0) rotate(0deg) scale(0.5);
+            transform: translateY(0) translateX(0) rotate(0deg);
             opacity: 0;
           }
           10% {
-            opacity: 0.6;
+            opacity: 0.3;
           }
           90% {
-            opacity: 0.6;
+            opacity: 0.3;
           }
           100% {
-            transform: translateY(-100vh) translateX(${Math.random() * 200 - 100}px) rotate(${Math.random() * 360}deg) scale(1.2);
-            opacity: 0;
-          }
-        }
-
-        @keyframes float-particle {
-          0% {
-            transform: translateY(0) translateX(0);
-            opacity: 0;
-          }
-          10% {
-            opacity: 1;
-          }
-          90% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px);
+            transform: translateY(-100vh) translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 360}deg);
             opacity: 0;
           }
         }
 
         @keyframes scan-line {
           0%, 100% {
-            transform: translateY(-20vh);
-            opacity: 0;
+            transform: translateY(0);
+            opacity: 0.3;
           }
           50% {
-            transform: translateY(60vh);
-            opacity: 1;
+            transform: translateY(50vh);
+            opacity: 0.6;
           }
         }
 
         @keyframes scan-line-delayed {
           0%, 100% {
-            transform: translateY(-10vh);
-            opacity: 0;
+            transform: translateY(0);
+            opacity: 0.2;
           }
           50% {
-            transform: translateY(50vh);
-            opacity: 1;
+            transform: translateY(40vh);
+            opacity: 0.5;
           }
         }
 
         @keyframes scan-line-delayed-2 {
           0%, 100% {
             transform: translateY(0);
-            opacity: 0;
+            opacity: 0.2;
           }
           50% {
-            transform: translateY(40vh);
-            opacity: 1;
+            transform: translateY(30vh);
+            opacity: 0.4;
           }
-        }
-
-        @keyframes spin-slow {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
         }
 
         .animate-scan-line {
-          animation: scan-line 6s ease-in-out infinite;
+          animation: scan-line 8s ease-in-out infinite;
         }
 
         .animate-scan-line-delayed {
-          animation: scan-line-delayed 8s ease-in-out 2s infinite;
+          animation: scan-line-delayed 10s ease-in-out 2s infinite;
         }
 
         .animate-scan-line-delayed-2 {
-          animation: scan-line-delayed-2 10s ease-in-out 4s infinite;
-        }
-
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
-        }
-
-        .animate-float-particle {
-          animation: float-particle 15s linear infinite;
+          animation: scan-line-delayed-2 12s ease-in-out 4s infinite;
         }
       `}</style>
     </div>
